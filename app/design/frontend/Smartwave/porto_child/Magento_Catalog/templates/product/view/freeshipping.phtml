@@ -1,0 +1,10 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+$_product_price =$_product->getResource()->getAttribute('price')->getFrontend()->getValue($_product);
+?>
+<?php if ($_product_price>19): ?>
+<div class="free_shipping_catalogue_div">
+    <span class="free_shipping_catalogue">Free Shipping</span>
+</div>
+<?php endif; ?>

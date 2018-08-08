@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 SW-THEMES. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.stock.sku">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.delivery" template="product/view/delivery.phtml" after="-">
+				<arguments>
+				    <argument name="at_call" xsi:type="string">getDeliveryTime</argument>
+				    <argument name="at_code" xsi:type="string">delivery_time</argument>
+				    <argument name="css_class" xsi:type="string">delivery_time</argument>
+				    <argument name="at_label" xsi:type="string">Delivery Time</argument>
+				    <argument name="add_attribute" xsi:type="string">itemprop="delivery_time"</argument>
+				</arguments>
+			</block>
+        </referenceContainer>
+        <referenceContainer name="product.info.form.content">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.freeshipping" template="product/view/freeshipping.phtml" after="-">
+			</block>
+        </referenceContainer>
+        <referenceContainer name="product.info.main" >
+		     <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.customproductbadge" template="product/view/customproductbadge.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.main" >
+		     <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.brand" template="product/view/brand.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.media">
+		        <!-- must have content to display -->
+		        <block  class="Magento\Catalog\Block\Product\View\Description"  name="product.info.mycustomcontainer" template="product/view/mycustomcontainer.phtml"  />
+		</referenceContainer>
+		<!-- sidebar compare block
+			 compare block from product details page
+			 add to wishlist from product details page 
+
+		<referenceBlock name="catalog.compare.sidebar" remove="true"/>-->
+	    <referenceBlock name="view.addto.compare" remove="true" />
+	    <referenceBlock name="view.addto.wishlist" remove="true" />
+	     <referenceBlock name="product.info.mailto" remove="true" />
+    </body>
+</page>

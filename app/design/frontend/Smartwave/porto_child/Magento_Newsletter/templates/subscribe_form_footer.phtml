@@ -1,0 +1,52 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+    $_helper = $this->helper('Smartwave\Porto\Helper\Data');
+?>
+<div class="block newsletter">
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="<?php echo $block->getFormActionUrl() ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <div>
+            <div class="field newsletter">
+                <label class="label" for="footer_newsletter"><span><?php echo __('Sign Up for Our Newsletter:') ?></span></label>
+                <div class="control">
+                    <input name="email" type="email" id="footer_newsletter"
+                                data-validate="{required:true, 'validate-email':true}" placeholder="<?php echo __('Email Address');?>"/>
+
+                </div>
+
+            </div>
+            <div  class="select-gender">
+                <select class="sd-footer-newsletter__select select2-hidden-accessible" id="subscr_gender94" name="gender" tabindex="-1" aria-hidden="true" style="">
+                    <option value="M">Male</option> 
+                    <option value="F">Female</option> 
+                </select>
+            </div>
+        </div>
+        <div>
+            <div class="actions">
+                    <button class="action subscribe primary ty-btn__subscribe ty-btn" title="<?php echo __('Subscribe') ?>" type="submit">
+                        <span><?php echo __('Subscribe') ?></span>
+                    </button>
+                </div>
+        </div>
+        <div class="sd-social-icons"> <a href="https://www.facebook.com/clickyPK" target="_blank" class="sd-social-icons__item"> <svg xmlns="http://www.w3.org/2000/svg" width="11" height="24" viewBox="0 0 11 24"><path style="fill:#999;fill-rule:evenodd" class="cls-1" d="M862.378 3186.65v3.3H860v4.04h2.378V3206h4.884v-12.01h3.277s.307-1.93.456-4.05h-3.715v-2.76a1.156 1.156 0 0 1 1.059-.97H871V3182h-3.618c-5.125 0-5.004 4.04-5.004 4.65z" transform="translate(-860 -3182)"></path></svg> </a> <a href="https://plus.google.com/" target="_blank" class="sd-social-icons__item"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path style="fill:#999;fill-rule:evenodd" class="cls-1" d="M978.842 3192.13v-3.04h-2.105v3.04h-3.158v2.02h3.158v3.04h2.105v-3.04H982v-2.02h-3.158zm-8.105 3.44l-1.158-.81a1.692 1.692 0 0 1-.842-1.42 2.01 2.01 0 0 1 1.052-1.62c1.369-1.01 2.737-2.13 2.737-4.35a5.025 5.025 0 0 0-2.1-3.95h1.79l1.263-1.42h-6.527c-4.631 0-6.947 2.84-6.947 5.87a5 5 0 0 0 5.263 4.86h.842a3.98 3.98 0 0 0-.421 1.32 2.7 2.7 0 0 0 .948 2.03 14.5 14.5 0 0 0-6.211 1.62 4.35 4.35 0 0 0-2.421 3.74c0 2.33 2.21 4.56 6.947 4.56 5.685 0 8.421-3.04 8.421-5.97-.005-2.13-1.162-3.25-2.636-4.46zm-8-9.22c0-2.22 1.368-3.24 2.842-3.24 2.737 0 4.21 3.55 4.21 5.57a2.983 2.983 0 0 1-3.052 3.14c-2.632 0-4-3.14-4-5.47zm3.789 18.23c-3.473 0-5.684-1.52-5.684-3.74s2.105-2.94 2.737-3.25a15.821 15.821 0 0 1 3.474-.5h.736c2.527 1.72 3.579 2.43 3.579 4.05 0 1.92-2 3.44-4.842 3.44z" transform="translate(-958 -3182)"></path></svg> </a> <a href="https://twitter.com/Clicky_PK" target="_blank" class="sd-social-icons__item"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24"><path style="fill:#999;fill-rule:evenodd" class="cls-1" d="M930 3184.84a12.305 12.305 0 0 1-3.535.95 6.07 6.07 0 0 0 2.706-3.35 12.26 12.26 0 0 1-3.908 1.47 6.18 6.18 0 0 0-4.493-1.91 6.106 6.106 0 0 0-6.155 6.06 5.99 5.99 0 0 0 .16 1.38 17.576 17.576 0 0 1-12.686-6.33 5.923 5.923 0 0 0-.834 3.04 6.039 6.039 0 0 0 2.738 5.05 6.23 6.23 0 0 1-2.787-.76v.08a6.094 6.094 0 0 0 4.937 5.94 6.184 6.184 0 0 1-1.621.21 6.306 6.306 0 0 1-1.158-.11 6.149 6.149 0 0 0 5.749 4.21 12.5 12.5 0 0 1-7.644 2.59 14.208 14.208 0 0 1-1.468-.08 17.613 17.613 0 0 0 9.435 2.72 17.248 17.248 0 0 0 17.512-17.24q0-.39-.018-.78a12.434 12.434 0 0 0 3.07-3.14z" transform="translate(-900 -3182)"></path></svg> </a> <a href="https://www.pinterest.com/clickypk/" target="_blank" class="sd-social-icons__item"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path style="fill:#999;fill-rule:evenodd" class="cls-1" d="M1034.39 3186.98a11.944 11.944 0 0 0-4.36-4.37 12.078 12.078 0 0 0-12.05 0 11.9 11.9 0 0 0-4.37 4.37 12.041 12.041 0 0 0 .37 12.63 12 12 0 0 0 5.21 4.39 10.286 10.286 0 0 1 .2-2.76l1.55-6.54a4.147 4.147 0 0 1-.39-1.9 3.552 3.552 0 0 1 .67-2.22 1.977 1.977 0 0 1 1.64-.89 1.466 1.466 0 0 1 1.2.51 2.009 2.009 0 0 1 .42 1.3 4.842 4.842 0 0 1-.18 1.18c-.12.46-.27 1-.46 1.61s-.33 1.1-.42 1.46a1.794 1.794 0 0 0 .36 1.63 1.9 1.9 0 0 0 1.53.68 3.154 3.154 0 0 0 2.75-1.86 8.932 8.932 0 0 0 1.07-4.51 4.421 4.421 0 0 0-1.32-3.33 5.068 5.068 0 0 0-3.69-1.28 5.676 5.676 0 0 0-5.9 5.75 3.562 3.562 0 0 0 .79 2.36.714.714 0 0 1 .18.67c-.02.06-.07.22-.13.47s-.1.41-.12.48a.4.4 0 0 1-.6.32 3.6 3.6 0 0 1-1.83-1.74 6.338 6.338 0 0 1-.62-2.86 6.625 6.625 0 0 1 .34-2.09 7.112 7.112 0 0 1 1.04-2.03 7.964 7.964 0 0 1 4.12-2.93 10.108 10.108 0 0 1 3.06-.45 8.032 8.032 0 0 1 3.99.99 6.95 6.95 0 0 1 2.69 2.54 6.439 6.439 0 0 1 .93 3.35 10.552 10.552 0 0 1-.81 4.22 6.882 6.882 0 0 1-2.3 2.94 5.57 5.57 0 0 1-3.37 1.07 3.754 3.754 0 0 1-1.78-.44 2.522 2.522 0 0 1-1.14-1.06c-.47 1.85-.75 2.94-.85 3.3a9.52 9.52 0 0 1-1.22 2.56 12 12 0 0 0 9.43-1.11 11.9 11.9 0 0 0 4.37-4.37 12.06 12.06 0 0 0 0-12.04z" transform="translate(-1012 -3181)"></path></svg> </a> </div>
+            
+        </form>
+    </div>
+</div>
+
+    </div>
+</div>

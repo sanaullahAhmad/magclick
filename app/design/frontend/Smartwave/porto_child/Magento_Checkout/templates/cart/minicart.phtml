@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Checkout\Block\Cart\Sidebar */
+?>
+<div class="dropdown top-panel-dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="38px" viewBox="0 9 31 36.675" enable-background="new 0 0 35 36.675" xml:space="preserve"> <path fill="#555" d="M24.257,10.985V9.94c0-3.642-3.032-6.606-6.757-6.606s-6.757,2.964-6.757,6.606v1.045h-4.91L3.5,30.166
+                    c0,2.299,1.911,4.168,4.263,4.168h19.475c2.352,0,4.263-1.869,4.263-4.168l-2.333-19.18H24.257z M12.408,15.85
+                    c-0.79,0-1.432-0.627-1.432-1.4s0.642-1.4,1.432-1.4s1.432,0.627,1.432,1.4C13.84,15.229,13.198,15.85,12.408,15.85z M21.141,10.985
+                    h-7.281V9.94c0-1.963,1.633-3.56,3.641-3.56s3.641,1.596,3.641,3.56V10.985z M22.592,15.85c-0.791,0-1.432-0.627-1.432-1.4
+                    s0.641-1.4,1.432-1.4c0.79,0,1.432,0.627,1.432,1.4C24.017,15.229,23.382,15.85,22.592,15.85z"></path> </svg>
+    </button>
+    <ul class="dropdown-menu minicart">
+      <li>
+          <a tabindex="-1" href="#">
+              <!-- orignal content -->
+              <div data-block="minicart" class="minicart-wrapper">
+                <a class="action showcart" href="<?php echo $block->getShoppingCartUrl(); ?>"
+                   data-bind="scope: 'minicart_content'">
+                    <span class="text"><?php echo __('My Cart'); ?></span>
+                    <span class="counter qty empty"
+                          data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+                        <span class="counter-number">
+                        <!-- ko if: getCartParam('summary_count') --><!-- ko text: getCartParam('summary_count') --><!-- /ko --><!-- /ko -->
+                        <!-- ko ifnot: getCartParam('summary_count') -->0<!-- /ko -->
+                        </span>
+                        <span class="counter-label">
+                            <!-- ko i18n: 'items' --><!-- /ko -->
+                        </span>
+                    </span>
+                </a>
+                <?php if ($block->getIsNeedToDisplaySideBar()): ?>
+                    <div class="block block-minicart empty"
+                         data-role="dropdownDialog"
+                         data-mage-init='{"dropdownDialog":{
+                            "appendTo":"[data-block=minicart]",
+                            "triggerTarget":".showcart",
+                            "timeout": "2000",
+                            "closeOnMouseLeave": false,
+                            "closeOnEscape": true,
+                            "triggerClass":"active",
+                            "parentClass":"active",
+                            "buttons":[]}}'>
+                        <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                            <!-- ko template: getTemplate() --><!-- /ko -->
+                        </div>
+                    </div>
+                <?php endif ?>
+                <script>
+                    window.checkout = <?php echo \Zend_Json::encode($block->getConfig()); ?>;
+                </script>
+                <script type="text/x-magento-init">
+                {
+                    "[data-block='minicart']": {
+                        "Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>
+                    },
+                    "*": {
+                        "Magento_Ui/js/block-loader": "<?php echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                    }
+                }
+                </script>
+            </div>
+            <!-- orignal content ends -->
+          </a>
+     </li>
+  </ul>
+</div>
+
+
+

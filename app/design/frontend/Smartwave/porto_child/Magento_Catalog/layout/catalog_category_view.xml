@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 SW-THEMES. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    	<container name="my.custom.container" as="my_custom_container" htmlTag="div" htmlClass="myCustomContainer" htmlId="customContainer" />
+        <move element="category.image" destination="page.top"/>
+        <move element="sidebar.additional" destination="sidebar.main"  before="-"/>
+    </body>
+</page>

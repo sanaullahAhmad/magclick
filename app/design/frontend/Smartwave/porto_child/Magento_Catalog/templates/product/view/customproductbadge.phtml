@@ -1,0 +1,13 @@
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$b_url = $objectManager->get('Magento\Store\Model\StoreManagerInterface')
+                    ->getStore()
+                    ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+$product_badge = $_product->getResource()->getAttribute('product_badge')->getFrontend()->getValue($_product);
+$product_price = $_product->getResource()->getAttribute('price')->getFrontend()->getValue($_product);
+if ($product_badge): ?>
+<img style="width: 100px;" src="<?php echo $b_url.'/catalog/product'.$product_badge; ?>" />
+<?php endif; 
+//echo $product_price; ?>
