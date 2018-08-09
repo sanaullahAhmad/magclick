@@ -1,13 +1,16 @@
 <?php 
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$b_url = $objectManager->get('Magento\Store\Model\StoreManagerInterface')
-                    ->getStore()
-                    ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+$current_category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
 $_product = $block->getProduct();
-$select_brand = $_product->getResource()->getAttribute('select_brand')->getFrontend()->getValue($_product);
-$select_id = $_product->getDataByKey('select_brand');
-//echo $select_id;
-//echo "<pre>"; print_r($_product->debug());die("dead");
-if ($select_brand != "No"): ?>
-<a href="<?php echo $b_url.'/?select_brand='.$select_id; ?>">show all form <?php echo $select_brand; ?></a>
-<?php endif;  ?>
+$brand_name = $_product->getResource()->getAttribute('select_brand')->getFrontend()->getValue($_product);
+$brand_id = $_product->getDataByKey('select_brand');
+
+if ($brand_name != "No"): ?>
+<style>
+.product-info-main .product-reviews-summary, .customer-review .product-reviews-summary
+   {
+       margin-top: 10px;
+   }
+</style>
+<a href="<?php echo $current_category->getUrl().'?select_brand='.$brand_id; ?>">Show All <?php echo $brand_name; ?> Brand Products</a>
+<?php endif; ?>
