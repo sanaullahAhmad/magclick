@@ -2,6 +2,8 @@
 return array (
   'modules' => 
   array (
+    'Discretelogix_EditReview' => 1,
+    'Discretelogix_Review' => 1,
     'Magento_Store' => 1,
     'Magento_Directory' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
