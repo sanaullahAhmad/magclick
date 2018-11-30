@@ -1,0 +1,19 @@
+run command in rout directory "composer update"
+
+Step1:: Please make sure that LoadModule version_module modules/mod_version.so is loaded from httpd.conf file to resolve Invalid command '<IfVersion', perhaps misspelled or defined by a module not included in the server configuration error.
+
+Step2::
+
+Please make sure that below variable value should be set as
+
+max_execution_time = 1800
+max_input_time = 1800
+memory_limit = 1024M
+
+magento222sd\app\etc/env-sample.php change its name to env.php
+
+magento222sd\pub\errors/local.xml.sample change its name to local.xml
+
+run command "php bin/magento setup:upgrade"
+
+browse http://localhost/magento222sd/
