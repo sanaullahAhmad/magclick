@@ -17,3 +17,8 @@ magento222sd\pub\errors/local.xml.sample change its name to local.xml
 run command "php bin/magento setup:upgrade"
 
 browse http://localhost/magento222sd/
+
+
+http://localhost/magento222sd/admin
+UN: sanaullahAhmad
+Pass: admin123
